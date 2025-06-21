@@ -10,10 +10,14 @@ enum ContentType {
     Twitter = "twitter"
 }
 
+interface CreateContentModalProps {
+  open: boolean;
+  onClose: () => void;
+}
 // controlled component
-export function CreateContentModal({open, onClose}) {
-    const titleRef = useRef<HTMLInputElement>();
-    const linkRef = useRef<HTMLInputElement>();
+export function CreateContentModal({open, onClose}: CreateContentModalProps) {
+    const titleRef = useRef<HTMLInputElement>(null);
+    const linkRef = useRef<HTMLInputElement>(null);
     const [type, setType] = useState(ContentType.Youtube);
 
     async function addContent() {
