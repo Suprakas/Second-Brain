@@ -10,6 +10,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Second Brain backend is running!");
+});
+
 app.post("/api/v1/signup", async (req, res) => {
     // TODO: zod validation , hash the password
     const username = req.body.username;
