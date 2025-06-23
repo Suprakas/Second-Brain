@@ -40,6 +40,9 @@ app.post("/api/v1/signin", async (req, res) => {
         password
     })
     if (existingUser) {
+        if (!JWT_PASSWORD) {
+            throw new Error("JWT_PASSWORD is not defined");
+        }
         const token = jwt.sign({
             id: existingUser._id
         }, JWT_PASSWORD)
@@ -165,4 +168,8 @@ app.get("/api/v1/brain/:shareLink", async (req, res) => {
 
 })
 
-app.listen(3000);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`App is running at ${PORT}`)
+})
