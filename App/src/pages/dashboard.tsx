@@ -10,6 +10,7 @@ import { BACKEND_URL } from "../config"
 import axios from "axios"
 
 export function Dashboard() {
+  
   const [modalOpen, setModalOpen] = useState(false);
   const {contents, refresh} = useContent();
 
