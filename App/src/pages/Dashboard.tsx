@@ -36,7 +36,8 @@ export function Dashboard() {
                     "Authorization": localStorage.getItem("token")
                 }
             });
-            const shareUrl = `http://localhost:5173/share/${response.data.hash}`;
+            const baseUrl = import.meta.env.VITE_PUBLIC_URL || window.location.origin;
+            const shareUrl = `${baseUrl}/share/${response.data.hash}`;
             alert(shareUrl);
         }} variant="secondary" text="Share brain" startIcon={<ShareIcon />}></Button>
       </div>
