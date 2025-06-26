@@ -29,3 +29,7 @@ A full-stack productivity app built with **React**, **TypeScript**, **Express**,
 - MongoDB Atlas connection string
 - Vercel/Render account for deployment
 
+#### Deploment links :
+
+Fronotend (Vercel) - http://second-brain-app-sable.vercel.app/
+Backend (Render) - https://second-brain-g7u3.onrender.com
